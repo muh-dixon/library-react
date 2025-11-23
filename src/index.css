@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .App {
@@ -45,8 +45,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-
 
 ul {
   display: flex;
@@ -217,7 +215,6 @@ button:active {
   color: white;
 }
 
-
 /* 
 
 LANDING
@@ -225,7 +222,7 @@ LANDING
 */
 
 #landing {
-  background-color: rgba(115, 66, 214, 0.1)
+  background-color: rgba(115, 66, 214, 0.1);
 }
 
 header {
@@ -254,7 +251,7 @@ header {
   /* Added this after the tutorial to 
   show it over the wave on larger screens */
   z-index: 50;
-  
+
   /* Added this after the tutorial to 
   make landing page responsive on laptops */
   max-height: 50vh;
@@ -319,16 +316,17 @@ HIGHLIGHTS
 }
 
 .highlight__wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .highlight {
   padding: 0 24px;
-  width: calc(100% / 3);
   display: flex;
   align-items: center;
   flex-direction: column;
+  /* remove width entirely */
 }
 
 .highlight__para {
@@ -367,15 +365,16 @@ FEATURES
 }
 
 .books {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -24px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  width: 100%;
 }
 
 .book {
-  width: 25%;
   padding: 24px;
   transition: all 300ms ease;
+  /* remove width since grid handles it */
 }
 
 .book:hover {
@@ -412,7 +411,7 @@ FEATURES
 }
 
 .book__price--skeleton {
-  width : 200px;
+  width: 200px;
   height: 19px;
 }
 
@@ -506,7 +505,7 @@ BOOKS PAGE
 
 #books__main {
   flex: 1;
-  background-color: rgb(248,249,250);
+  background-color: rgb(248, 249, 250);
 }
 
 .books__header {
@@ -620,7 +619,7 @@ select {
 }
 
 .book__selected--title {
-  margin-bottom: 8px
+  margin-bottom: 8px;
 }
 
 .book__summary--title {
@@ -696,7 +695,6 @@ select {
   max-height: 128px;
 }
 
-
 .cart__book--info {
   display: flex;
   flex-direction: column;
@@ -767,6 +765,16 @@ select {
   padding: 12px 0;
 }
 
+/* Allow layout to scale on very large or zoomed-out screens */
+.row,
+.nav__container,
+.header__container,
+.books__container,
+.container {
+  max-width: min(1400px, 95vw);
+  width: 100%;
+}
+
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
   .header__description {
@@ -785,10 +793,6 @@ select {
     font-size: 18px;
   }
 
-  .book {
-    width: 50%;
-  }
-
   .book__selected {
     flex-direction: column;
   }
@@ -800,7 +804,6 @@ select {
     width: 100%;
   }
 }
-
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
